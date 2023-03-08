@@ -1,17 +1,27 @@
-var piedra = 0;
-var papel = 1;
-var tijera = 2;
 var jugador;
 var pc;
-
+let resultado;
 var min = 0,
   max = 2;
 
+function eleccion(jugada) {
+  if (jugada == 0) {
+    resultado = "Piedra";
+  } else if (jugada == 1) {
+    resultado = "Papel";
+  } else if (jugada == 2) {
+    resultado = "Tijera";
+  } else {
+    resultado = "No elejiste bien";
+  }
+  return resultado;
+}
+
 function juega(jugador, pc) {
   if (
-    (jugador === 0 && pc === 2) ||
-    (jugador === 2 && pc === 1) ||
-    (jugador === 1 && pc === 0)
+    (jugador === "Papel" && pc === "Piedra") ||
+    (jugador === "Tijera" && pc === "Papel") ||
+    (jugador === "Piedra" && pc === "Tijera")
   ) {
     console.log(`GANASTE CON ${jugador} y PC PERDIÓ CON ${pc}`);
   } else if (jugador === pc) {
@@ -20,16 +30,5 @@ function juega(jugador, pc) {
     console.log(`PERDISTE CON ${jugador} y PC GANÓ CON ${pc}`);
   }
 }
-opcion(jugador)
 
-juega(2, Math.floor(Math.random() * (max - min + 1) + min));
-
-function opcion(numero) {
-  if (numero === 0) {
-    console.log("Piedra");
-  } else if (numero === 1) {
-    console.log("Papel");
-  } else {
-    console.log("Tijera");
-  }
-}
+juega(eleccion(0), eleccion(Math.floor(Math.random() * (max - min + 1) + min)));
