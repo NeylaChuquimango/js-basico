@@ -7,7 +7,3 @@ var edad;
 //inicializamos la variable
 edad = 20;
 
-//solo para probar
-
-let nombre = 'Neyla'
-const apellido = 'chuquimango'
