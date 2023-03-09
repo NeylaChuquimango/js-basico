@@ -4,7 +4,7 @@ let resultado;
 var min = 0;
 var max = 2;
 
-jugador = prompt("Elige 0: Piedra, 1: Papel, 2: Tijera");
+jugador = prompt("Elige 0 => Piedra, 1 => Papel, 2 => Tijera");
 
 function eleccion(jugada) {
   if (jugada == 0) {

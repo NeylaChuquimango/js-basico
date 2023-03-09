@@ -4,6 +4,8 @@ let resultado;
 var min = 0,
   max = 2;
 
+  jugador = prompt('Elige una opción: 0 => Piedra, 1 => Papel, 2 => Tijera!!')
+
 function eleccion(jugada) {
   if (jugada == 0) {
     resultado = "Piedra";
@@ -31,4 +33,4 @@ function juega(jugador, pc) {
   }
 }
 
-juega(eleccion(0), eleccion(Math.floor(Math.random() * (max - min + 1) + min)));
+juega(eleccion(jugador), eleccion(Math.floor(Math.random() * (max - min + 1) + min)));
